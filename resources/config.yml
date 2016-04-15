@@ -1,0 +1,4 @@
+---
+# Config for StatsMe
+stats: "&bYour stats:&nl&aName:&f {name}&nl&6Coins:&f {coins}"
+...

@@ -26,7 +26,7 @@ class Main extends PluginBase implements Listener{
                     $sname = $sender->getName();
                     $stats = str_replace("{line}", "\n", $args);
                     $stats = str_replace("'{name}", $sname, $args);
-					$stats = str_replace("'{xyz}", $sender->x.", ".$sender->y.", ".$sender->z, $args);
+					$stats = str_replace("'{xyz}", $sender->x.", ".$sender->y.", ".$sender->z, $stats);
                     $stats = str_replace("&", "", $args);
                     $sender->sendMessage($stats);
                     break;

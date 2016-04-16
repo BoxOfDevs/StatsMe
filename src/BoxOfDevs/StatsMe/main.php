@@ -6,6 +6,7 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\utils\Config;
 use pocketmine\Server;
+use pocketmine\Player;
 use onebone\economyapi\EconomyAPI;
 class Main extends PluginBase implements Listener{
      

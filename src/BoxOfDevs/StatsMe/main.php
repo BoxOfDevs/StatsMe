@@ -13,7 +13,7 @@ class Main extends PluginBase implements Listener{
           $this->getServer()->getPluginManager()->registerEvents($this,$this);
           $this->getLogger()->info("StatsMe by BoxOfDevs enabled!");
           if($this->getServer()->getPluginManager()->getPlugin("EconomyAPI") !=== null){
-			  $this->economyapi = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
+               $this->economyapi = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
                $this->getLogger->info("EconomyAPI support in StatsMe enabled!")
           }else{
                $this->getLogger->info("EconomyAPI support in StatsMe disabled!")

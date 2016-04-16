@@ -25,9 +25,10 @@ class Main extends PluginBase implements Listener{
                case "stats":
                     $stats = $this->config->get("stats");
                     $sname = $sender->getName();
-                    $stats = str_replace("{line}", "\n", $args);
-                    $stats = str_replace("'{name}", $sname, $args);
-                    $stats = str_replace("'{xyz}", $sender->x.", ".$sender->y.", ".$sender->z, $stats);
+                    $stats = str_replace("{line}", "\n", $stats);
+                    $stats = str_replace("{name}", $sname, $stats);
+                    $stats = str_replace("{xyz}", $sender->x.", ".$sender->y.", ".$sender->z, $stats);
+                    $stats = str_replace("{coins}", $this->$economyapi->mymoney($sender->getName()), $stats);
                     $stats = str_replace("&", "", $args);
                     $sender->sendMessage($stats);
                     break;

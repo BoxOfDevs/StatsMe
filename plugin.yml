@@ -1,9 +1,9 @@
-    name: StatsMe
-    main: BoxOfDevs\StatsMe\main
-    version: 1.0.0
-    api: [1.14.0, 2.0.0]
+name: StatsMe
+main: BoxOfDevs\StatsMe\main
+version: 1.0.0
+api: [1.14.0, 2.0.0]
     
 commands:
-  stats:
-     description: "Shows your stats."
-     usage: /stats
+    stats:
+        description: "Shows your stats."
+        usage: "/stats"

@@ -25,15 +25,19 @@ class Main extends PluginBase implements Listener{
      public function onCommand(CommandSender $sender, Command $command, $label, array $args){
           switch($command->getName()){
                case "stats":
-                    $stats = $this->config->get("stats");
-                    $sname = $sender->getName();
-                    $stats = str_replace("{line}", "\n", $stats);
-                    $stats = str_replace("{name}", $sname, $stats);
-                    $stats = str_replace("{xyz}", $sender->x.", ".$sender->y.", ".$sender->z, $stats);
-                    $stats = str_replace("{coins}", $this->$economyapi->mymoney($sender->getName()), $stats);
-                    $stats = str_replace("&", "", $args);
-                    $sender->sendMessage($stats);
-                    break;
+                    if(!$sender instanceof Player){
+                         $stats = $this->config->get("stats");
+                         $sname = $sender->getName();
+                         $stats = str_replace("{line}", "\n", $stats);
+                         $stats = str_replace("{name}", $sname, $stats);
+                         $stats = str_replace("{xyz}", $sender->x.", ".$sender->y.", ".$sender->z, $stats);
+                         $stats = str_replace("{coins}", $this->$economyapi->mymoney($sender->getName()), $stats);
+                         $stats = str_replace("&", "", $args);
+                         $sender->sendMessage($stats);
+                         break;
+                    }else{
+                         $sender->sendMessage("Please use this command ingame!");
+                    }
           }
           return true;
      }

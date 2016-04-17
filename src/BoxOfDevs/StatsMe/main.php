@@ -16,9 +16,9 @@ class Main extends PluginBase implements Listener{
           $this->saveResource("config.yml");
           if($this->getServer()->getPluginManager()->getPlugin("EconomyAPI") != null){
                $this->economyapi = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
-               $this->getLogger->notice("EconomyAPI support in StatsMe enabled!");
+               $this->getLogger()->notice("EconomyAPI support in StatsMe enabled!");
           }else{
-               $this->getLogger->notice("EconomyAPI support in StatsMe disabled!");
+               $this->getLogger()->notice("EconomyAPI support in StatsMe disabled!");
           }
      }
      

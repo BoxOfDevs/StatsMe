@@ -26,7 +26,7 @@ class Main extends PluginBase implements Listener{
      public function onCommand(CommandSender $sender, Command $command, $label, array $args){
           switch($command->getName()){
                case "stats":
-                    if(!$sender instanceof Player){
+                    if($sender instanceof Player){
                          $stats = $this->config->get("stats");
                          $sname = $sender->getName();
                          $stats = str_replace("{line}", "\n", $stats);

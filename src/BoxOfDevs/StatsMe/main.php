@@ -1,5 +1,5 @@
 <?php
-namespace BoxOfDevs\statsme;
+namespace BoxOfDevs\StatsMe;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\command\Command;

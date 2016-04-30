@@ -16,7 +16,7 @@ class Main extends PluginBase implements Listener{
           $this->saveResource("config.yml");
           $this->config = new Config($this->getDataFolder(). "config.yml", Config::YAML);
           if($this->getServer()->getPluginManager()->getPlugin("EconomyAPI") != null){
-               $economyapi = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
+               $this->economyapi = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
                $this->getLogger()->notice("EconomyAPI support in StatsMe enabled!");
           }else{
                $this->getLogger()->notice("EconomyAPI support in StatsMe disabled!");
@@ -32,7 +32,7 @@ class Main extends PluginBase implements Listener{
                          $stats = str_replace("{line}", "\n", $stats);
                          $stats = str_replace("{name}", $sname, $stats);
                          $stats = str_replace("{xyz}", $sender->x.", ".$sender->y.", ".$sender->z, $stats);
-                         $stats = str_replace("{coins}", $this->$economyapi->mymoney($sender->getName()), $stats);
+                         $stats = str_replace("{coins}", $this->economyapi->mymoney($sender->getName()), $stats);
                          $stats = str_replace("&", "", $args);
                          $sender->sendMessage($stats);
                          break;

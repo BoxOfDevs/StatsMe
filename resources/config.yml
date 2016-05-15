@@ -10,7 +10,8 @@
 # {name} - The player's name
 # {healt} -  The player's health
 # {maxhealth} - The player's maximum health
-# {hearts} - The player's health displayed with heart symbols
+# {hearts} - The player's health displayed with heart symbols (choose one underneath)
+heartsymbol: "❤"
 # {coins} - The player's coins (needs economyAPI by onebone)
 # {xyz} - The position of the player
 # 

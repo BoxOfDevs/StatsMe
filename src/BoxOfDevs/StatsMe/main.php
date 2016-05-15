@@ -38,6 +38,9 @@ class Main extends PluginBase implements Listener{
                          $stats = str_replace("{health}", $health, $stats);
                          $maxhealth = $sender->getMaxHealth();
                          $stats = str_replace("{maxhealth}", $maxhealth, $stats);
+                         $hearts = str_repeat("♥", $health/2);
+                         $nohearts = str_repeat("♥", $maxhealth/2 - $health/2);
+                         $stats = str_replace("{hearts}", "§c".$hearts."§f".$nohearts, $stats);
                          $stats = str_replace("{coins}", $this->economyapi->mymoney($sender->getName()), $stats);
                          $stats = str_replace("{line}", "\n", $stats);
                          $stats = str_replace("&", "§", $stats);

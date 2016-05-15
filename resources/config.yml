@@ -1,4 +1,4 @@
 ---
 # Config for StatsMe
-stats: "&e&lYour stats:{line}&aName:&f {name}{line}&6Coins:&f {coins}{line}&bXYZ:&f  {xyz}"
+stats: "&e&lYour stats:{line}&aName:&f {name}{line}&cHealth: &f{health}/{maxhealth}&6Coins:&f {coins}{line}&bXYZ:&f {xyz}"
 ...

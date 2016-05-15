@@ -34,6 +34,10 @@ class Main extends PluginBase implements Listener{
                          $y = round($sender->y, 0);
                          $z = round($sender->z, 0);
                          $stats = str_replace("{xyz}", $x.", ".$y.", ".$z, $stats);
+                         $health = $sender->getHealth();
+                         $stats = str_replace("{health}", $health, $stats);
+                         $maxhealth = $sender->getMaxHealth();
+                         $stats = str_replace("{maxhealth}", $maxhealth, $stats);
                          $stats = str_replace("{coins}", $this->economyapi->mymoney($sender->getName()), $stats);
                          $stats = str_replace("{line}", "\n", $stats);
                          $stats = str_replace("&", "§", $stats);

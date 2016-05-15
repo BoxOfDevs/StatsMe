@@ -29,11 +29,11 @@ class Main extends PluginBase implements Listener{
                     if($sender instanceof Player){
                          $stats = $this->config->get("stats");
                          $sname = $sender->getName();
-                         $stats = str_replace("{line}", "\n", $stats);
                          $stats = str_replace("{name}", $sname, $stats);
                          $stats = str_replace("{xyz}", $sender->x.", ".$sender->y.", ".$sender->z, $stats);
                          $stats = str_replace("{coins}", $this->economyapi->mymoney($sender->getName()), $stats);
-                         $stats = str_replace("&", "", $args);
+                         $stats = str_replace("{line}", "\n", $stats);
+                         $stats = str_replace("&", "§", $stats);
                          $sender->sendMessage($stats);
                          break;
                     }else{

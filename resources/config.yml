@@ -1,4 +1,20 @@
 ---
+#  ╔═╗┌┬┐┌─┐┌┬┐┌─┐╔╦╗┌─┐
+#  ╚═╗ │ ├─┤ │ └─┐║║║├┤ 
+#  ╚═╝ ┴ ┴ ┴ ┴ └─┘╩ ╩└─┘
 # Config for StatsMe
+# 
+# Available variables:
+# {name} - The player's name
+# {healt} -  The player's health
+# {maxhealth} - The player's maximum health
+# {coins} - The player's coins (needs economyAPI by onebone)
+# {xyz} - The position of the player
+# 
+# Formatting variables:
+# & - Use this instead of § (paragraph) to color the text a list of color codes can be found here: http://minecraft.gamepedia.com/Formatting_codes#Color_codes
+# {line} - Use this instead of \n to make a new line
+# 
+# The text shown when a player does /stats:
 stats: "&e&lYour stats:{line}&aName:&f {name}{line}&cHealth: &f{health}/{maxhealth}&6Coins:&f {coins}{line}&bXYZ:&f {xyz}"
 ...

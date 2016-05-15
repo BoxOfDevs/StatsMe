@@ -18,5 +18,5 @@
 # {line} - Use this instead of \n to make a new line
 # 
 # The text shown when a player does /stats:
-stats: "&e&lYour stats:{line}&aName:&f {name}{line}&cHealth: &f{health}/{maxhealth}&6Coins:&f {coins}{line}&bXYZ:&f {xyz}"
+stats: "&e&lYour stats:{line}&aName:&f {name}{line}&cHealth: &f{health}/{maxhealth}{line}&6Coins:&f {coins}{line}&bXYZ:&f {xyz}"
 ...

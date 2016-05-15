@@ -10,6 +10,7 @@
 # {name} - The player's name
 # {healt} -  The player's health
 # {maxhealth} - The player's maximum health
+# {hearts} - The player's health displayed with heart symbols
 # {coins} - The player's coins (needs economyAPI by onebone)
 # {xyz} - The position of the player
 # 
@@ -18,5 +19,5 @@
 # {line} - Use this instead of \n to make a new line
 # 
 # The text shown when a player does /stats:
-stats: "&e&lYour stats:{line}&aName:&f {name}{line}&cHealth: &f{health}/{maxhealth}{line}&6Coins:&f {coins}{line}&bXYZ:&f {xyz}"
+stats: "&e&lYour stats:{line}&aName:&f {name}{line}&cHealth: &f{health}/{maxhealth}{line}&cHearts: {hearts}{line}&6Coins:&f {coins}{line}&bXYZ:&f {xyz}"
 ...

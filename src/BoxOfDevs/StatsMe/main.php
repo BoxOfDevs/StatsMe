@@ -38,7 +38,7 @@ class Main extends PluginBase implements Listener{
                          $stats = str_replace("{health}", $health, $stats);
                          $maxhealth = $sender->getMaxHealth();
                          $stats = str_replace("{maxhealth}", $maxhealth, $stats);
-                         $heartsymbol = $this->config->get("heartsymbol")
+                         $heartsymbol = $this->config->get("heartsymbol");
                          $hearts = str_repeat($heartsymbol, $health/2);
                          $nohearts = str_repeat($heartsymbol, $maxhealth/2 - $health/2);
                          $stats = str_replace("{hearts}", "§c".$hearts."§f".$nohearts, $stats);

@@ -7,3 +7,11 @@ commands:
     stats:
         description: "Shows your stats."
         usage: "/stats"
+        
+permissions:
+    statsme.my:
+        default: true
+        description: "Allows you to get your stats."
+    statsme.other:
+        default: true
+        description: "Allows you to get the stats of other players."

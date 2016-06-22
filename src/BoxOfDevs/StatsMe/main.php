@@ -7,6 +7,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\utils\Config;
 use pocketmine\Server;
 use pocketmine\Player;
+use pocketmine\permission\Permission;
 use onebone\economyapi\EconomyAPI;
 class Main extends PluginBase implements Listener{
      
@@ -26,7 +27,7 @@ class Main extends PluginBase implements Listener{
      public function onCommand(CommandSender $sender, Command $command, $label, array $args){
           switch($command->getName()){
                case "stats":
-                    if($sender instanceof Player && !isset($args[0])){
+                    if($sender instanceof Player && !isset($args[0]) && $sender->hasPermission("statsme.my")){
                          $stats = $this->config->get("stats");
                          $stats = str_replace("{firstline}", $this->config->get("firstline_mystats"), $stats);
                          $sname = $sender->getName();
@@ -48,7 +49,7 @@ class Main extends PluginBase implements Listener{
                          $stats = str_replace("&", "§", $stats);
                          $sender->sendMessage($stats);
                          break;
-                    }elseif(isset($args[0])){
+                    }elseif(isset($args[0]) && $sender->hasPermission("statsme.other")){
                          $player = $this->getServer()->getPlayer($args[0]);
                          $stats = $this->config->get("stats");
                          $stats = str_replace("{firstline}", $this->config->get("firstline_otherstats"), $stats);
@@ -71,8 +72,11 @@ class Main extends PluginBase implements Listener{
                          $stats = str_replace("&", "§", $stats);
                          $sender->sendMessage($stats);
                          break;
-                    }else{
+                    }elseif(!$sender instanceof Player){
                          $sender->sendMessage("Please use this command ingame!");
+                         break;
+                    }else{
+                         $sender->sendMessage("You don't have the permission to perform this command.");
                          break;
                     }
           }

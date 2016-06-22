@@ -7,6 +7,11 @@
 # Config for StatsMe
 # 
 # Available variables:
+# {firstline} - Set the first line (or any other line) depending on if the player gets the own stats or the stats of other players.
+# If the payer gets the own stats, the text will be:
+firstline_mystats: "&e&lYour stats:"
+# If the player gets another players stats, the text will be:
+firstline_otherstats: "&e&l{name}s stats:"
 # {name} - The player's name
 # {healt} -  The player's health
 # {maxhealth} - The player's maximum health
@@ -20,5 +25,5 @@ heartsymbol: "❤"
 # {line} - Use this instead of \n to make a new line
 # 
 # The text shown when a player does /stats:
-stats: "&e&lYour stats:{line}&aName:&f {name}{line}&cHealth: &f{health}/{maxhealth}{line}&cHearts: {hearts}{line}&6Coins:&f {coins}{line}&bXYZ:&f {xyz}"
+stats: "{firstline}{line}&aName:&f {name}{line}&cHealth: &f{health}/{maxhealth}{line}&cHearts: {hearts}{line}&6Coins:&f {coins}{line}&bXYZ:&f {xyz}"
 ...

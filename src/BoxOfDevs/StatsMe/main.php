@@ -26,8 +26,9 @@ class Main extends PluginBase implements Listener{
      public function onCommand(CommandSender $sender, Command $command, $label, array $args){
           switch($command->getName()){
                case "stats":
-                    if($sender instanceof Player){
+                    if($sender instanceof Player && !isset($args[0])){
                          $stats = $this->config->get("stats");
+                         $stats = str_replace("{firstline}", $this->config->get("firstline_mystats"), $stats);
                          $sname = $sender->getName();
                          $stats = str_replace("{name}", $sname, $stats);
                          $x = round($sender->x, 0);
@@ -47,8 +48,32 @@ class Main extends PluginBase implements Listener{
                          $stats = str_replace("&", "§", $stats);
                          $sender->sendMessage($stats);
                          break;
+                    }elseif(isset($args[0])){
+                         $player = $this->getServer()->getPlayer($args[0]);
+                         $stats = $this->config->get("stats");
+                         $stats = str_replace("{firstline}", $this->config->get("firstline_otherstats"), $stats);
+                         $pname = $player->getName();
+                         $stats = str_replace("{name}", $pname, $stats);
+                         $x = round($player->x, 0);
+                         $y = round($player->y, 0);
+                         $z = round($player->z, 0);
+                         $stats = str_replace("{xyz}", $x.", ".$y.", ".$z, $stats);
+                         $health = $player->getHealth();
+                         $stats = str_replace("{health}", $health, $stats);
+                         $maxhealth = $player->getMaxHealth();
+                         $stats = str_replace("{maxhealth}", $maxhealth, $stats);
+                         $heartsymbol = $this->config->get("heartsymbol");
+                         $hearts = str_repeat($heartsymbol, $health/2);
+                         $nohearts = str_repeat($heartsymbol, $maxhealth/2 - $health/2);
+                         $stats = str_replace("{hearts}", "§c".$hearts."§f".$nohearts, $stats);
+                         $stats = str_replace("{coins}", $this->economyapi->mymoney($player->getName()), $stats);
+                         $stats = str_replace("{line}", "\n", $stats);
+                         $stats = str_replace("&", "§", $stats);
+                         $sender->sendMessage($stats);
+                         break;
                     }else{
                          $sender->sendMessage("Please use this command ingame!");
+                         break;
                     }
           }
           return true;

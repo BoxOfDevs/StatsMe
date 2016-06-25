@@ -68,7 +68,9 @@ class Main extends PluginBase implements Listener{
                               $hearts = str_repeat($heartsymbol, $health/2);
                               $nohearts = str_repeat($heartsymbol, $maxhealth/2 - $health/2);
                               $stats = str_replace("{hearts}", "§c".$hearts."§f".$nohearts, $stats);
-                              $stats = str_replace("{coins}", $this->economyapi->mymoney($player->getName()), $stats);
+                              if($this->economyapi != null){
+                                   $stats = str_replace("{coins}", $this->economyapi->mymoney($player->getName()), $stats);
+                              }
                               $stats = str_replace("{line}", "\n", $stats);
                               $stats = str_replace("&", "§", $stats);
                               $sender->sendMessage($stats);

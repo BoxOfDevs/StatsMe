@@ -20,6 +20,7 @@ class Main extends PluginBase implements Listener{
                $this->economyapi = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
                $this->getLogger()->notice("EconomyAPI support in StatsMe enabled!");
           }else{
+               $this->economyapi = null;
                $this->getLogger()->notice("EconomyAPI support in StatsMe disabled!");
           }
      }

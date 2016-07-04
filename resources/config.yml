@@ -25,7 +25,7 @@ heartsymbol: "❤"
 # {line} - Use this instead of \n to make a new line
 # 
 # The text shown when a player does /stats:
-stats: "{firstline}{line}&aName:&f {name}{line}&cHealth: &f{health}/{maxhealth}{line}&cHearts: {hearts}{line}&6Coins:&f {coins}{line}&bXYZ:&f {xyz}"
+stats: "{firstline}{line}&aName:&f {name}{line}&cHealth:&f {health}/{maxhealth}{line}&cHearts: {hearts}{line}&6Coins:&f {coins}{line}&eWins:&f {wins}{line}&bXYZ:&f {xyz}"
 # 
 # Messages:
 player_notfound_msg: "Player not found!"
